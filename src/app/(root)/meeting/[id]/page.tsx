@@ -20,6 +20,7 @@ function page({ params : {id} }: { params: { id: string } }) {
       Call Not Found
     </p>
   );
+  console.log("call info : ",call)
 
   const notAllowed = call.type === 'invited' && (!user || !call.state.members.find((m) => m.user.id === user.id));
 
