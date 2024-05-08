@@ -10,7 +10,7 @@ import Loader from '@/components/Loader';
 import { Alert } from "@/components/ui/alert"
 
 
-function page({ params : {id} }: { params: { id: string } }) {
+function Page({ params : {id} }: { params: { id: string } }) {
   const {user,isLoaded} = useUser();
   const [isSetupCompleted,setIsSetupCompleted] = useState<boolean>(false);
   const {call,isCallLoading} = useGetCallById(id);
@@ -45,4 +45,4 @@ function page({ params : {id} }: { params: { id: string } }) {
   )
 }
 
-export default page
+export default Page
