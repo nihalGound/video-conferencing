@@ -13,9 +13,11 @@ import React from 'react'
 
 const Table = ({title,description}:{title:string; description:string;})=>{
   return (
-    <div className='flex w-fit gap-x-5'>
-      <h1 className='text-[#C9DDFF] font-normal text-lg'>{title} :</h1>
-      <p className='text-white font-bold text-lg'>{description}</p>
+    <div className='flex w-fit gap-x-5 flex-col'>
+      <h1 className='text-[#C9DDFF] font-medium text-lg'>{title} :</h1>
+      <h1 className="truncate text-sm font-bold max-sm:max-w-[320px] lg:text-xl text-white">
+        {description}
+      </h1>
     </div>
   )
 }
@@ -48,7 +50,7 @@ const PersonalRoom = () => {
 
   const meetinLink = `${process.env.NEXT_PUBLIC_BASE_URL}/meeting/${meetingId}?personal=true}`;
   return (
-    <main>
+    <main className='flex w-fit flex-col flex-wrap'>
       <div className='text-3xl text-white mb-5'>Personal-room</div>
       <div className='flex flex-col items-start gap-8'>
         <Table
